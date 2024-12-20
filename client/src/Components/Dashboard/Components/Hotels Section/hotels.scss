@@ -1,0 +1,228 @@
+:root {
+    --PrimaryColor: hsl(257, 25%, 45%);
+    --HoverColor: hsl(257, 25%, 60%);
+    /* Ajustado para mantener un tono similar pero más claro */
+    --paleGreen: hsl(257, 25%, 85%);
+    /* Ajustado para mantener un tono claro */
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --bgColor: hsl(220, 10%, 94%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+    --itemCardColor: hsl(120, 5%, 88%);
+    --itemCardHover: hsl(120, 27%, 87%);
+
+    /* Font and Typography */
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize: .75rem;
+}
+
+.mainContent {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+
+        &-thumb {
+            background-color: var(--PrimaryColor);
+            border-radius: 5px;
+        }
+
+        &-track {
+            background-color: var(--inputColor);
+        }
+    }
+
+    .hotelsContainer {
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--blackColor);
+            font-size: var(--biggestFontSize);
+            font-weight: 600;
+        }
+
+        .hotel-card {
+            background-color: var(--whiteColor);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            }
+
+            .hotel-image {
+                height: 100%;
+                width: 100%;
+                min-height: 300px;
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                    object-position: center;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            .hotel-content {
+                padding: 2rem;
+
+                .hotel-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin-bottom: 1rem;
+
+                    .hotel-name {
+                        color: var(--blackColor);
+                        font-size: var(--h1FontSize);
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .price-range {
+                        color: var(--PrimaryColor);
+                        font-weight: 600;
+                    }
+
+                    .MuiRating-root {
+                        color: #ffd700;
+                    }
+                }
+
+                .location-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: var(--textColor);
+                    margin-bottom: 1rem;
+
+                    svg {
+                        color: var(--PrimaryColor);
+                    }
+                }
+
+                .hotel-description {
+                    color: var(--textColor);
+                    margin-bottom: 1.5rem;
+                    line-height: 1.6;
+                    font-size: var(--normalFontSize);
+                }
+
+                .divider {
+                    margin: 1.5rem 0;
+                    background-color: var(--paleGreen);
+                }
+
+                .amenities-section {
+                    margin-bottom: 1.5rem;
+
+                    h6 {
+                        color: var(--blackColor);
+                        margin-bottom: 1rem;
+                        font-size: var(--h3FontSize);
+                    }
+
+                    .amenities-list {
+                        display: flex;
+                        gap: 1.5rem;
+
+                        .amenity-item {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            background-color: var(--paleGreen);
+                            transition: background-color 0.3s ease;
+
+                            svg {
+                                color: var(--PrimaryColor);
+                                font-size: 1.2rem;
+                            }
+
+                            &:hover {
+                                background-color: var(--PrimaryColor);
+
+                                svg {
+                                    color: var(--whiteColor);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rooms-section {
+                    margin-bottom: 1.5rem;
+
+                    h6 {
+                        color: var(--blackColor);
+                        margin-bottom: 0.5rem;
+                        font-size: var(--h3FontSize);
+                    }
+
+                    .room-types {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 1rem;
+
+                        .room-type {
+                            color: var(--textColor);
+                            font-size: var(--normalFontSize);
+                        }
+                    }
+                }
+
+                .action-buttons {
+                    display: flex;
+                    gap: 1rem;
+                    margin-top: 1.5rem;
+
+                    button {
+                        flex: 1;
+                        text-transform: none;
+                        font-weight: 600;
+                        padding: 0.8rem;
+
+                        &.MuiButton-contained {
+                            background-color: var(--PrimaryColor);
+                            color: var(--whiteColor);
+
+                            &:hover {
+                                background-color: var(--HoverColor);
+                            }
+                        }
+
+                        &.MuiButton-outlined {
+                            border-color: var(--PrimaryColor);
+                            color: var(--PrimaryColor);
+
+                            &:hover {
+                                background-color: var(--paleGreen);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

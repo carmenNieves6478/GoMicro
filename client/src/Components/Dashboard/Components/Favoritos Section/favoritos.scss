@@ -1,0 +1,94 @@
+.mainContent {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
+
+    // Estilos del scrollbar usando anidamiento
+    &::-webkit-scrollbar {
+        width: 10px;
+
+        &-thumb {
+            background-color: var(--PrimaryColor);
+            border-radius: 5px;
+        }
+
+        &-track {
+            background-color: var(--inputColor);
+        }
+    }
+
+    // Contenedor de lugares
+    .placesContainer {
+        width: 100%;
+    }
+}
+
+// Sobrescribir estilos de Material UI
+.MuiCard-root {
+    background-color: var(--whiteColor) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .MuiCardContent-root {
+        padding: 1.5rem;
+    }
+
+    .MuiCardMedia-root {
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+// Estilos de botones Material UI
+.MuiButton-contained {
+    text-transform: none !important;
+    font-weight: 600 !important;
+    background-color: var(--PrimaryColor) !important;
+
+    &:hover {
+        background-color: var(--HoverColor) !important;
+    }
+}
+
+// Estilos para la cuadrícula de lugares
+.places-grid {
+    margin-top: 2rem;
+
+    .place-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .location-info {
+            display: flex;
+            align-items: center;
+            color: var(--textColor);
+            margin-bottom: 1rem;
+
+            svg {
+                margin-right: 0.5rem;
+                color: var(--PrimaryColor);
+            }
+        }
+
+        .place-description {
+            color: var(--textColor);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .place-title {
+            color: var(--blackColor);
+            margin-bottom: 1rem;
+            font-size: var(--h2FontSize);
+        }
+    }
+}

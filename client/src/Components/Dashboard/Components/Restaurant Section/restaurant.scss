@@ -1,0 +1,151 @@
+:root {
+    --PrimaryColor: hsl(257, 25%, 45%);
+    --HoverColor: hsl(257, 25%, 60%);
+    /* Ajustado para mantener un tono similar pero más claro */
+    --paleGreen: hsl(257, 25%, 85%);
+    /* Ajustado para mantener un tono claro */
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --bgColor: hsl(220, 10%, 94%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+    --itemCardColor: hsl(120, 5%, 88%);
+    --itemCardHover: hsl(120, 27%, 87%);
+
+    /* Font and Typography */
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize: .75rem;
+}
+
+.mainContent {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+
+        &-thumb {
+            background-color: var(--PrimaryColor);
+            border-radius: 5px;
+        }
+
+        &-track {
+            background-color: var(--inputColor);
+        }
+    }
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem !important;
+    color: var(--blackColor);
+    font-size: var(--h1FontSize) !important;
+}
+
+.restaurants-grid {
+    .restaurant-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: var(--whiteColor);
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .restaurant-title {
+            color: var(--blackColor);
+            margin-bottom: 0.5rem;
+            font-size: var(--h2FontSize);
+            font-weight: 600;
+        }
+
+        .restaurant-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+
+            .MuiRating-root {
+                color: #ffc107;
+            }
+        }
+
+        .restaurant-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+
+            .MuiChip-root {
+                background-color: var(--paleGreen);
+
+                &.MuiChip-outlined {
+                    border-color: var(--PrimaryColor);
+                    color: var(--PrimaryColor);
+                }
+            }
+        }
+
+        .restaurant-description {
+            color: var(--textColor);
+            margin-bottom: 1rem;
+            font-size: var(--normalFontSize);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--textColor);
+
+            svg {
+                color: var(--PrimaryColor);
+                font-size: 1.2rem;
+            }
+        }
+
+        .specialties {
+            margin: 1rem 0;
+
+            .specialties-title {
+                color: var(--blackColor);
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+            }
+
+            .specialty-chips {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+
+                .specialty-chip {
+                    background-color: var(--paleGreen);
+                    font-size: var(--smallFontSize);
+                }
+            }
+        }
+
+        .view-more-btn {
+            margin-top: auto;
+            background-color: var(--PrimaryColor);
+            color: var(--whiteColor);
+            text-transform: none;
+            font-weight: 600;
+
+            &:hover {
+                background-color: var(--HoverColor);
+            }
+        }
+    }
+}

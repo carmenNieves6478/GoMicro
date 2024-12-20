@@ -1,0 +1,176 @@
+/* General styles for layout */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+/* Container that holds the panel and map */
+.container {
+    display: flex;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Panel where inputs and buttons are located */
+.panel {
+    width: 350px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Map container */
+#map {
+    flex-grow: 1;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Search form section */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Style for input fields */
+input,
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Style for select input (dropdown) */
+select {
+    cursor: pointer;
+}
+
+/* Buttons */
+button {
+    padding: 12px;
+    background-color: #4a36af;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #372882;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Admin panel for route drawing and saving */
+.admin-panel {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+/* Title for admin section */
+.admin-panel h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Style for list of routes */
+#rutaListContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+}
+
+/* Individual route item in the list */
+.ruta-item {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for buttons within each route item */
+.ruta-item button {
+    padding: 8px 16px;
+    background-color: #4a36af;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.ruta-item button:hover {
+    background-color: #372882;
+}
+
+/* Style for the text under the button in each route item */
+.ruta-item p {
+    margin: 10px 0 0;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Style for the dropdown suggestion list */
+.suggestions-list {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 1000;
+    width: 90%;
+}
+
+.suggestions-list div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions-list div:hover {
+    background-color: #f0f0f0;
+}
+
+/* Make sure the buttons in the admin panel do not get too big */
+#iniciarDibujo,
+#guardarRuta {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Small adjustments for the form inputs in admin panel */
+#nombreLugarAdmin,
+#nombreRuta,
+#referencia {
+    margin-bottom: 10px;
+}
+
+/* Add some spacing between the form elements */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}

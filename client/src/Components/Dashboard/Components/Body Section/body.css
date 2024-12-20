@@ -1,0 +1,30 @@
+@charset "UTF-8";
+.mainContent {
+  /* Ancho del contenedor */
+  width: 82%;
+  /* Altura completa del contenedor */
+  height: 100%;
+  /* Espacio interno alrededor del contenido */
+  padding: 2rem;
+  /* Permite que el contenido se desplace si es demasiado grande */
+  overflow: auto;
+  /* Estilos para el contenedor inferior */
+}
+.mainContent .bottom {
+  /* Margen superior */
+  margin-top: 2rem;
+  /* Espacio entre elementos hijos */
+  gap: 2rem;
+  /* Alineación vertical de los elementos hijos */
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 918px) {
+  .bottom {
+    flex-direction: column;
+  }
+}
+.mainContent .bottom {
+  margin-top: 2rem;
+  gap: 2rem;
+}/*# sourceMappingURL=body.css.map */
